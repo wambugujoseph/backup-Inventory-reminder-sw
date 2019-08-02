@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="628.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backup.reports.resources.MailManagerController">
+   <children>
+      <TabPane layoutX="37.0" layoutY="14.0" prefHeight="606.0" prefWidth="931.0" style="-fx-border-style: dotted;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="14.0">
+        <tabs>
+          <Tab fx:id="emailTab" closable="false" styleClass="mailManagerTab" text="EMAILS ADDRESSES">
+            <content>
+              <AnchorPane fx:id="mailAddressTabHolder" minHeight="0.0" minWidth="0.0" prefHeight="619.0" prefWidth="929.0">
+                     <children>
+                        <AnchorPane fx:id="tableAnchorPane" layoutX="37.0" layoutY="62.0" prefHeight="431.0" prefWidth="891.0" style="-fx-border-color: BLACK;" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="62.0">
+                           <children>
+                              <TableView fx:id="emailAddressTable" layoutX="1.0" layoutY="1.0" prefHeight="431.0" prefWidth="890.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-1.0">
+                                <columns>
+                                  <TableColumn fx:id="activeCol" prefWidth="62.0" text="Active" />
+                                  <TableColumn fx:id="equipmentUserCol" prefWidth="176.0" text="Equipment User" />
+                                    <TableColumn fx:id="emailAddressCol" prefWidth="209.0" text="Email Address" />
+                                    <TableColumn fx:id="clientMAchineCol" prefWidth="221.0" text="Client Machine" />
+                                    <TableColumn fx:id="executionTimeCol" prefWidth="220.0" text="Execution Time" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <TextField fx:id="searchTextField" layoutX="52.0" layoutY="37.0" prefHeight="22.0" prefWidth="614.0" promptText="Search by Equipment user or client machine">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextField>
+                        <FontAwesomeIconView fx:id="searchClear" glyphName="CLOSE" layoutX="29.0" layoutY="57.0" size="20" />
+                        <Label fx:id="searchLabel" layoutX="673.0" layoutY="38.0" prefHeight="20.0" prefWidth="72.0" text="Search">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SEARCH" size="20" text="" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="37.0" layoutY="492.0" prefHeight="59.0" prefWidth="891.0" style="-fx-border-color: grey;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="1.0">
+                           <children>
+                              <Button fx:id="newEmailBtn" layoutX="51.0" layoutY="4.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" styleClass="actionBtn" text="New Email">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" fontSmoothingType="LCD" glyphName="USER_PLUS" nodeOrientation="LEFT_TO_RIGHT" size="40" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="editEmailAddressBtn" layoutX="284.0" layoutY="4.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" styleClass="actionBtn" text="Edit">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" glyphName="EDIT" size="40" style="-fx-background-color: none;" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="deleteEmailAddressBtn" layoutX="554.0" layoutY="4.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="170.0" styleClass="actionBtn" text="Delete">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" glyphName="TRASH" size="40" style="-fx-background-color: none;" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="addressRefreshBtn" layoutX="808.0" layoutY="21.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="93.0" styleClass="actionBtn" text="Refresh">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="clientEmailRefresh" fill="#176be0" glyphName="REFRESH" size="30" />
+                           </graphic>
+                        </Button>
+                        <Pane layoutX="52.0" layoutY="7.0" prefHeight="28.0" prefWidth="643.0" style="-fx-background-color: #DCE1D8;">
+                           <children>
+                              <TextField fx:id="senderEmail" alignment="CENTER" layoutY="2.0" prefHeight="24.0" prefWidth="350.0" promptText="Sender Email">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </TextField>
+                              <FontAwesomeIconView fx:id="emailUp" glyphName="ARROW_UP" layoutX="613.0" layoutY="18.0" size="14" wrappingWidth="11.142857551574707" />
+                              <FontAwesomeIconView fx:id="emailDown" fill="#111010" glyphName="ARROW_DOWN" layoutX="630.0" layoutY="19.0" size="14" />
+                              <Button fx:id="saveSenderDetail" layoutX="504.0" layoutY="3.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="47.0" text="Save">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="testSenderEmail" layoutX="559.0" layoutY="2.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="47.0" text="Test">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <PasswordField fx:id="senderPassword" layoutX="354.0" layoutY="2.0" promptText="password" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <MaterialDesignIconView fill="#176be0" glyphName="EMAIL" size="35" text="" />
+               </graphic>
+          </Tab>
+          <Tab fx:id="reminderTab" styleClass="mailManagerTab" text="REMINDER AND NOTIFICATIONS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="564.0" prefWidth="929.0">
+                     <children>
+                        <AnchorPane fx:id="reminderTableWrapper" layoutX="41.0" layoutY="55.0" prefHeight="431.0" prefWidth="886.0" style="-fx-border-color: BLACK;" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="55.0">
+                           <children>
+                              <TableView fx:id="reminderTableView" editable="true" layoutX="1.0" layoutY="1.0" prefHeight="448.0" prefWidth="885.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="reminderStatusCol" prefWidth="51.0" text="Status" />
+                                    <TableColumn fx:id="reminderEquipmentUserCol" prefWidth="141.0" text="Equipment User" />
+                                    <TableColumn fx:id="reminderClientMachineCol" prefWidth="104.0" text="Client Machine" />
+                                    <TableColumn fx:id="reminderRecipientCol" prefWidth="119.0" text="Recipient" />
+                                    <TableColumn fx:id="reminderOccurrenceCol" minWidth="-1.0" prefWidth="123.0" text="Reminder Occurence" />
+                                    <TableColumn fx:id="inventoryOccurrenceCol" prefWidth="130.0" text="Inventory Occurence" />
+                                    <TableColumn fx:id="reminderSubjectCol" prefWidth="99.0" text="Subject" />
+                                    <TableColumn fx:id="reminderMessageCol" prefWidth="113.0" text="Message" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="41.0" layoutY="485.0" prefHeight="64.0" prefWidth="888.0" style="-fx-border-color: grey;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="newReminderBtn" layoutX="43.0" layoutY="4.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="145.0" styleClass="actionBtn" text="New">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialIconView fill="#e85304" glyphName="LIBRARY_ADD" size="38" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="reminderEditBtn" layoutX="249.0" layoutY="4.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="145.0" styleClass="actionBtn" text="Edit">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" glyphName="EDIT" size="40" style="-fx-background-color: none;" text="" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="mailComposeBtn" layoutX="460.0" layoutY="3.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" styleClass="actionBtn" text="Compose">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" glyphName="PLUS" size="40" style="-fx-background-color: none;" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="reminderDeleteBtn" layoutX="675.0" layoutY="3.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" styleClass="actionBtn" text="Delete">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" glyphName="TRASH" size="40" style="-fx-background-color: none;" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="reminderRefresh" layoutX="767.0" layoutY="10.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="100.0" styleClass="actionBtn" text="Refresh">
+                           <graphic>
+                              <FontAwesomeIconView fill="#176be0" glyphName="REFRESH" size="30" text="" />
+                           </graphic>
+                        </Button>
+                        <TextField fx:id="reminderSearchTextField" layoutX="77.0" layoutY="19.0" prefHeight="24.0" prefWidth="581.0" promptText="Search by Equipment user or client machine">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextField>
+                        <FontAwesomeIconView glyphName="CLOSE" layoutX="54.0" layoutY="37.0" size="20" />
+                        <Label fx:id="searchLabel1" layoutX="668.0" layoutY="20.0" prefHeight="20.0" prefWidth="72.0" text="Search">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SEARCH" size="20" text="" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <FontAwesomeIconView fill="#176be0" glyphName="CALENDAR_PLUS_ALT" size="30" />
+               </graphic>
+          </Tab>
+            <Tab fx:id="mailLogTab" styleClass="mailManagerTab" text="MAIL LOGS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="537.0" prefWidth="932.0">
+                     <children>
+                        <AnchorPane layoutX="38.0" layoutY="52.0" prefHeight="438.0" prefWidth="891.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+                           <children>
+                              <TableView fx:id="logTableView" layoutX="4.0" layoutY="-2.0" prefHeight="438.0" prefWidth="887.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-1.0">
+                                 <columns>
+                                    <TableColumn fx:id="logStatusCol" prefWidth="63.0" text="Status" />
+                                    <TableColumn fx:id="logDateCol" prefWidth="105.0" text="Date" />
+                                    <TableColumn fx:id="logLevelCol" prefWidth="66.0" text="Log Level" />
+                                    <TableColumn fx:id="logRecipientCol" prefWidth="154.0" text="Recipient" />
+                                    <TableColumn fx:id="logMachineCol" minWidth="0.0" prefWidth="114.0" text="Client Machine" />
+                                    <TableColumn fx:id="logSubjectCol" minWidth="0.0" prefWidth="160.0" text="Subject" />
+                                    <TableColumn fx:id="logMessageIdCol" prefWidth="114.0" text="Message ID" />
+                                    <TableColumn fx:id="logInventoryFile" minWidth="0.0" prefWidth="110.0" text="Inventory File" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="38.0" layoutY="489.0" prefHeight="59.0" prefWidth="891.0" style="-fx-border-color: grey;" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="logReSendBtn" layoutX="51.0" layoutY="3.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="170.0" styleClass="actionBtn" text="Re-Send Email">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" fontSmoothingType="LCD" glyphName="SEND" nodeOrientation="LEFT_TO_RIGHT" size="40" text="" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="logDeleteBtn" layoutX="315.0" layoutY="3.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="170.0" styleClass="actionBtn" text="Delete">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e85304" glyphName="TRASH" size="40" style="-fx-background-color: none;" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <TextField fx:id="logSearchTextFieldBtn" layoutX="67.0" layoutY="23.0" prefHeight="24.0" prefWidth="602.0" promptText="Search...">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextField>
+                        <FontAwesomeIconView fx:id="logSearchClear" glyphName="CLOSE" layoutX="38.0" layoutY="38.0" size="20" />
+                        <Label fx:id="logSearchLabel" layoutX="692.0" layoutY="25.0" prefHeight="20.0" prefWidth="72.0" text="Search">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SEARCH" size="20" text="" />
+                           </graphic>
+                        </Label>
+                        <Button fx:id="mailLogRefresh" layoutX="780.0" layoutY="7.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="100.0" styleClass="actionBtn" text="Refresh">
+                           <graphic>
+                              <FontAwesomeIconView fill="#176be0" glyphName="REFRESH" size="30" text="" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <FontAwesomeIconView fill="#176be0" glyphName="FILE_TEXT" size="30" wrappingWidth="25.714284896850586" />
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane disable="true" layoutX="-1.0" prefHeight="574.0" prefWidth="38.0" />
+      <Text fill="#3e4095" layoutX="-194.0" layoutY="288.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BACKUP INVENTORY MAIL MANAGER" wrappingWidth="431.13671875">
+         <font>
+            <Font name="Showcard Gothic" size="24.0" />
+         </font>
+      </Text>
+      <Pane layoutX="-3.0" layoutY="612.0" prefHeight="15.0" prefWidth="969.0" style="-fx-background-color: GREY;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

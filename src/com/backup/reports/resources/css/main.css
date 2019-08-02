@@ -1,0 +1,72 @@
+.parentVbox{
+    -fx-border-color:black;
+    -fx-border-style:solid;
+
+}
+.menu .label{
+     -fx-text-fill:white;
+ }
+.menu-item .label{
+    -fx-text-fill:black;
+ }
+
+.headerSection{
+    -fx-background-color:#3e4095;
+
+}
+
+.primaryBtn{
+   -fx-background-color:#0099cc;
+   -fx-font-size:9;
+}
+.settingBtn{
+    -fx-background-color:#0099cc;
+    -fx-font-size:9;
+}
+
+.queryOptions{
+    -fx-background-color:#ffaa40;
+    -fx-border-style: solid;
+    -fx-border-color: black;
+}
+.contentAnchorPane{
+    -fx-background-color:#e6e6ff;
+     -fx-border-style:solid;
+     -fx-border-color: black;
+
+}
+.displayScrolPane{
+    -fx-border-style:solid;
+    -fx-border-color: black;
+}
+
+.holderAchorPane{
+    -fx-border-style:solid;
+    -fx-border-color: black;
+
+}
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-row-cell:focused{
+    -fx-background-color: #1f9ee3;
+}
+
+.table-row-cell:hover{
+    -fx-background-color: #ffaa40;
+    -fx-text-fill: #ffff;
+
+}
+#mailManager:hover{
+    -fx-text-fill: white;
+    -fx-border-width: 0px 0px 0px 5px;
+    -fx-border-color: #3e4095;
+    -fx-scale-y: 1.1;
+}
+#mailManager:hover #mailManagerIcon{
+    -fx-stroke: white;
+}
+
+

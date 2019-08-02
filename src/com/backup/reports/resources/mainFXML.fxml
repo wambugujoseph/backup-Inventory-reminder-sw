@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="684.0" prefWidth="1239.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backup.reports.resources.mainController">
+   <children>
+      <VBox prefHeight="714.0" prefWidth="1257.0" styleClass="parentVbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+              <MenuBar styleClass="headerSection" VBox.vgrow="ALWAYS">
+                  <menus>
+                      <Menu mnemonicParsing="false" styleClass="whiteClass" text="File">
+                          <items>
+                              <MenuItem fx:id="quite" mnemonicParsing="false" text="Quit" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Settings">
+                          <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openDbSettings" text="Database" />
+                              <MenuItem mnemonicParsing="false" onAction="#openDbSettings" text="Backup path" />
+      
+                                </items>
+                      </Menu>
+      
+                            <Menu mnemonicParsing="false" text="Help">
+                          <items>
+                              <MenuItem fx:id="help" mnemonicParsing="false" text="Help" />
+                              <MenuItem fx:id="developer" mnemonicParsing="false" text="Developers" />
+                          </items>
+                      </Menu>
+                  </menus>
+
+              </MenuBar>
+              <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="676.0" prefWidth="1255.0" style="-fx-background-color: white;" styleClass="holderAchorPane" VBox.vgrow="SOMETIMES">
+                  <children>
+                  <AnchorPane layoutX="2.0" layoutY="12.0" prefHeight="658.0" prefWidth="224.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="11.0">
+                     <children>
+                        <VBox layoutY="-10.0" prefHeight="625.0" prefWidth="221.0" styleClass="queryOptions" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-10.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="154.0" text="        QUERY OPTIONS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <Label prefHeight="17.0" prefWidth="192.0" text=" View Back  Inventory Based On: ">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <Label prefHeight="17.0" prefWidth="37.0" text="Date:">
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="datePikerOne" prefHeight="25.0" prefWidth="200.0" promptText="Date  MM/dd/yyyy">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button fx:id="fixedDateButtonId" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="56.0" text="view">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Separator layoutX="10.0" layoutY="373.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Separator>
+                              <Label prefHeight="17.0" prefWidth="143.0" text="Department Name:">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="3.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="serverNameCombo" prefHeight="25.0" prefWidth="200.0" promptText="Select Department">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Label prefHeight="17.0" prefWidth="74.0" text="From:">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="fromDatePicker" prefHeight="25.0" prefWidth="201.0" promptText="Start Date">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Label layoutX="10.0" layoutY="128.0" prefHeight="17.0" prefWidth="74.0" text="To:">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="toDatePicker" prefHeight="25.0" prefWidth="202.0" promptText="End Date">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <ButtonBar prefHeight="40.0" prefWidth="155.0">
+                                <buttons>
+                                    <Button fx:id="fromToDateButton" minWidth="65.0" mnemonicParsing="false" prefHeight="24.0" text="View">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Button>
+                                  <Button fx:id="resetFields" minWidth="70.0" mnemonicParsing="false" prefHeight="24.0" text="Reset">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Button>
+                                </buttons>
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                              </ButtonBar>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Separator>
+                              <Label fx:id="mailManager" alignment="CENTER" contentDisplay="RIGHT" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: #ffc680;" text="MAIL MANAGER" textFill="#176be0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialIconView fx:id="mailManagerIcon" fill="#176be0" glyphName="EMAIL" size="40" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                      <Button fx:id="settingBtnId" layoutX="139.0" layoutY="611.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="75.0" text="Settings" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="139.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#1490f5" glyphName="GEAR" size="20" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="mysqlShell" layoutX="6.0" layoutY="627.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="130.0" text="MySQLWorkbench" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="6.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#5451e8" glyphName="DATABASE" size="20" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <ButtonBar layoutX="656.0" layoutY="598.0" prefHeight="17.0" prefWidth="438.0" />
+                  <AnchorPane layoutX="224.0" layoutY="4.0" prefHeight="667.0" prefWidth="1008.0" styleClass="contentAnchorPane" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="3.0">
+                     <children>
+                        <Label layoutX="4.0" layoutY="44.0" minHeight="17.0" minWidth="130.0" prefHeight="25.0" prefWidth="130.0" text="Backup Results For:" textAlignment="CENTER" textFill="#31652b" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+            
+                                                               <cursor>
+                              <Cursor fx:constant="NONE" />
+                           </cursor>
+                        </Label>
+                        <AnchorPane layoutX="16.0" layoutY="3.0" prefHeight="35.0" prefWidth="405.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="-3.0" text="Disk Usage Status:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialIconView fill="#902626" glyphName="NOTIFICATIONS" size="20" />
+                                 </graphic>
+                              </Label>
+                              <Circle fill="#2db41b" layoutX="8.0" layoutY="23.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutX="16.0" layoutY="15.0" text="Enough space">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                              <Circle fill="#171dd8" layoutX="82.0" layoutY="24.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fill="#ff3c1f" layoutX="144.0" layoutY="24.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutX="92.0" layoutY="16.0" prefHeight="13.0" prefWidth="50.0" text="Agv Space">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="151.0" layoutY="16.0" prefHeight="13.0" prefWidth="50.0" text="Almost Full">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                              <ProgressBar fx:id="diskProgressBarId" layoutX="205.0" layoutY="11.0" prefHeight="23.0" prefWidth="200.0" progress="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="68.0" layoutY="625.0" prefHeight="17.0" prefWidth="353.0" text="Click The Refresh button to reflect the recent backup  Information" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="610.0" />
+                        <Button fx:id="backUpRefreshBtn" layoutX="409.0" layoutY="635.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" style="-fx-background-color: #0096e2;" text="Refresh" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="529.0">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14" text="" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="printPreview" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="95.0" styleClass="primaryBtn" text="Print Preview" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="48.0">
+                           <graphic>
+                              <MaterialIconView fill="WHITE" glyphName="PRINT" size="12" />
+                           </graphic></Button>
+                        <ScrollPane fx:id="displayArea" fitToHeight="true" fitToWidth="true" layoutX="2.0" layoutY="78.0" minHeight="527.0" minWidth="1000.0" prefHeight="529.0" prefWidth="1011.0" snapToPixel="false" styleClass="displayScrolPane" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="77.0" />
+                        <Label fx:id="contentTitle" layoutX="139.0" layoutY="44.0" minHeight="17.0" minWidth="130.0" prefHeight="25.0" prefWidth="370.0" textAlignment="CENTER" textFill="#31652b" textOverrun="WORD_ELLIPSIS">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="NONE" />
+                           </cursor>
+                        </Label>
+                        <Button fx:id="printBackupInventBtn" layoutX="914.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" styleClass="primaryBtn" text="Print Backup Inventory" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="558.0" layoutY="20.0" prefHeight="17.0" prefWidth="286.0" text="Print Dairy Backup Inventory From, To Specified Date: " AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="20.0" />
+                        <Button fx:id="clearBackupBtn" layoutX="862.0" layoutY="633.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" styleClass="primaryBtn" text="Delete Backup Records" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="6.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" size="14" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="557.0" layoutY="635.0" prefHeight="17.0" prefWidth="304.0" text="Click for more Options on Deleting Old Backup Records:" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="147.0" />
+                        <Separator layoutX="3.0" layoutY="603.0" prefHeight="3.0" prefWidth="1010.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="7.0" />
+                        <Button fx:id="instantMailBtn" layoutX="749.0" layoutY="50.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="primaryBtn" text="Instant Mail" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="49.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEND" size="12" />
+                           </graphic>
+                        </Button>
+                        <AnchorPane fx:id="indicatorPane" layoutX="491.0" layoutY="605.0" prefHeight="47.0" prefWidth="66.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.rightAnchor="458.0" />
+                     </children>
+                  </AnchorPane>
+                  </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+              </AnchorPane>
+          </children>
+      </VBox>
+   </children>
+</AnchorPane>

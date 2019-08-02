@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="KenSeph_Inventory">
+    <output-path>$PROJECT_DIR$/out/artifacts/KenSeph_Inventory</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.backup.reports.resources.MainApp" />
+        <option name="description" value="This Is A Software That Generates Backup inventory and Sends Backup Reminder Together With Inventory PDF Related to Particullar Client Automatically Based On The Schedulled Time." />
+        <option name="enabledSigning" value="true" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/KenSeph_Inventory.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="KenSeph Inventory Software" />
+        <option name="vendor" value="Joseph Wambugu and Kennedy Mutugi" />
+        <option name="version" value="1.1" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="KenSeph_Inventory.jar">
+        <element id="module-output" name="KenSeph_Inventory" />
+        <element id="library" level="project" name="lib" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/log4j.properties" />
+      </element>
+    </root>
+  </artifact>
+</component>

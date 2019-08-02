@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="backup_records@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="backup_records">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="androiddeft"/>
+    <schema id="4" parent="1" name="class_attendance"/>
+    <schema id="5" parent="1" name="employee"/>
+    <schema id="6" parent="1" name="food"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="jobapplication"/>
+    <schema id="9" parent="1" name="login"/>
+    <schema id="10" parent="1" name="loginapp"/>
+    <schema id="11" parent="1" name="mysql"/>
+    <schema id="12" parent="1" name="performance_schema"/>
+    <schema id="13" parent="1" name="phpmyadmin"/>
+    <schema id="14" parent="1" name="registration"/>
+    <schema id="15" parent="1" name="schoolmanegent"/>
+    <schema id="16" parent="1" name="smallapp"/>
+    <table id="17" parent="2" name="backup_client"/>
+    <table id="18" parent="2" name="client_emails"/>
+    <table id="19" parent="2" name="file_record"/>
+    <table id="20" parent="2" name="mail_logs"/>
+    <table id="21" parent="2" name="reminder_notification"/>
+    <column id="22" parent="17" name="server_name">
+      <Position>1</Position>
+      <DataType>varchar(252)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="17" name="logical_path">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="24" parent="17" name="PRIMARY">
+      <ColNames>server_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="18" name="active">
+      <Position>2</Position>
+      <DataType>varchar(164)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="18" name="equipment_user">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="18" name="email_address">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="18" name="client_machine">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="18" name="execution_time">
+      <Position>6</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="31" parent="18" name="client_machine">
+      <ColNames>client_machine</ColNames>
+    </index>
+    <key id="32" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="33" parent="18" name="client_emails_ibfk_1">
+      <ColNames>client_machine</ColNames>
+      <RefSchemaName>backup_records</RefSchemaName>
+      <RefTableName>backup_client</RefTableName>
+      <RefColNames>server_name</RefColNames>
+    </foreign-key>
+    <column id="34" parent="19" name="file_name">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="19" name="server_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="19" name="date_modified">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="19" name="size">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="38" parent="19" name="backup_type">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="39" parent="19" name="server_name">
+      <ColNames>server_name</ColNames>
+    </index>
+    <key id="40" parent="19" name="PRIMARY">
+      <ColNames>file_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="19" name="file_record_ibfk_1">
+      <ColNames>server_name</ColNames>
+      <RefSchemaName>backup_records</RefSchemaName>
+      <RefTableName>backup_client</RefTableName>
+      <RefColNames>server_name</RefColNames>
+    </foreign-key>
+    <column id="42" parent="20" name="status">
+      <Position>1</Position>
+      <DataType>varchar(164)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="20" name="date_time">
+      <Position>2</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="20" name="sender">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="20" name="recipient">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="20" name="client_machine">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="20" name="subject">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="20" name="content">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="49" parent="20" name="client_machine">
+      <ColNames>client_machine</ColNames>
+    </index>
+    <key id="50" parent="20" name="PRIMARY">
+      <ColNames>recipient
+client_machine</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="20" name="mail_logs_ibfk_1">
+      <ColNames>recipient</ColNames>
+      <RefSchemaName>backup_records</RefSchemaName>
+      <RefTableName>reminder_notification</RefTableName>
+      <RefColNames>recipient</RefColNames>
+    </foreign-key>
+    <foreign-key id="52" parent="20" name="mail_logs_ibfk_2">
+      <ColNames>client_machine</ColNames>
+      <RefSchemaName>backup_records</RefSchemaName>
+      <RefTableName>backup_client</RefTableName>
+      <RefColNames>server_name</RefColNames>
+    </foreign-key>
+    <column id="53" parent="21" name="status">
+      <Position>1</Position>
+      <DataType>varchar(164)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="21" name="reminder_occurrence">
+      <Position>2</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="21" name="inventory_occurrence">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="21" name="equipment_user">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="21" name="recipient">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="21" name="subject">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="21" name="message">
+      <Position>7</Position>
+      <DataType>blob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="60" parent="21" name="PRIMARY">
+      <ColNames>recipient</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backup.reports.resources.settingController">
+   <children>
+      <Pane layoutX="2.0" layoutY="172.0" prefHeight="133.0" prefWidth="476.0" style="-fx-border-color: #ffaa40;">
+         <children>
+            <Label layoutX="150.0" layoutY="6.0" prefHeight="17.0" prefWidth="72.0" text="Backup Path">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pathTxtId" layoutX="8.0" layoutY="55.0" prefHeight="25.0" prefWidth="437.0" promptText="backup url" />
+            <Button fx:id="pathBtnId" layoutX="446.0" layoutY="55.0" mnemonicParsing="false" onAction="#pathBtnId" prefHeight="25.0" prefWidth="27.0" text="..." />
+            <Button fx:id="pathSaveBtnId" layoutX="306.0" layoutY="94.0" mnemonicParsing="false" onAction="#pathSaveBtnId" text="Save" />
+            <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select the path where the backup directories are located." wrappingWidth="462.0" />
+            <Button fx:id="pathTxtClearId" layoutX="367.0" layoutY="94.0" mnemonicParsing="false" onAction="#clearPath" text="Clear" />
+            <Button fx:id="extBtn" layoutX="419.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Exit" />
+         </children></Pane>
+      <Separator layoutX="2.0" layoutY="166.0" prefHeight="6.0" prefWidth="482.0" />
+      <AnchorPane prefHeight="166.0" prefWidth="476.0" style="-fx-border-color: #ffaa40;">
+         <children>
+            <Label layoutX="89.0" layoutY="-1.0" prefHeight="17.0" prefWidth="143.0" text="Database Configuration">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label layoutX="4.0" layoutY="26.0" prefHeight="17.0" prefWidth="95.0" text="Host Name:" />
+            <Label layoutX="2.0" layoutY="65.0" prefHeight="17.0" prefWidth="95.0" text="Database Name:" />
+            <Label layoutX="4.0" layoutY="103.0" prefHeight="17.0" prefWidth="95.0" text="Password:" />
+            <PasswordField fx:id="passwordTxtId" layoutX="112.0" layoutY="99.0" prefHeight="17.0" prefWidth="156.0" promptText="database password" />
+            <TextField fx:id="hostNameTxtId" layoutX="112.0" layoutY="22.0" prefHeight="25.0" prefWidth="156.0" promptText="host address" />
+            <TextField fx:id="dbNameTxtId" layoutX="112.0" layoutY="61.0" prefHeight="25.0" prefWidth="156.0" promptText="database name" />
+            <Button fx:id="dbConfigSaveId" layoutX="112.0" layoutY="137.0" mnemonicParsing="false" onAction="#dbConfigSaveId" prefHeight="25.0" prefWidth="80.0" text="Save" />
+            <Separator layoutX="274.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="11.0" />
+            <Button fx:id="dbTxtClearId" layoutX="198.0" layoutY="137.0" mnemonicParsing="false" onAction="#clearField" prefHeight="25.0" prefWidth="80.0" text="Clear" />
+            <AnchorPane fx:id="dbStatus" layoutX="282.0" layoutY="6.0" prefHeight="154.0" prefWidth="191.0" />
+            
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

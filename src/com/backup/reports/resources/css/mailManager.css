@@ -1,0 +1,26 @@
+.mailManagerTab{
+    -fx-pref-width: 250;
+    -fx-pref-height: 40;
+    -fx-font-weight: bold;
+}
+.actionBtn{
+    -fx-background-color:#d9d9d9;
+}
+
+.actionBtn:hover{
+    -fx-background-color:#999999;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:focused{
+    -fx-background-color: #1f9ee3;
+}
+
+.table-row-cell:hover{
+    -fx-background-color: #ffaa40;
+    -fx-text-fill: #ffff;
+
+}

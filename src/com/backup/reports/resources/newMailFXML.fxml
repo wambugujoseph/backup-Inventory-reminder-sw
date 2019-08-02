@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="379.0" style="-fx-border-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backup.reports.resources.NewMailController">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="29.0" prefHeight="17.0" prefWidth="91.0" text="Equipment User :" />
+      <TextField fx:id="name" layoutX="113.0" layoutY="26.0" prefHeight="17.0" prefWidth="255.0" promptText="name">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="73.0" prefHeight="17.0" prefWidth="91.0" text="Email : " textAlignment="RIGHT" />
+      <TextField fx:id="email" layoutX="113.0" layoutY="70.0" prefHeight="17.0" prefWidth="255.0" promptText="example@gmail.com">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="119.0" prefHeight="17.0" prefWidth="91.0" text="Client Machine :" textAlignment="RIGHT" />
+      <ComboBox fx:id="clientMachine" editable="true" layoutX="113.0" layoutY="115.0" prefHeight="17.0" prefWidth="255.0" promptText="COD" />
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="169.0" prefHeight="17.0" prefWidth="91.0" text="Execution Time :" textAlignment="RIGHT" />
+      <TextField fx:id="time" layoutX="113.0" layoutY="166.0" prefHeight="17.0" prefWidth="255.0" promptText="Time">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Button fx:id="save" layoutX="246.0" layoutY="269.0" mnemonicParsing="false" text="Save">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <graphic>
+            <MaterialIconView glyphName="CHECK" size="14" />
+         </graphic>
+      </Button>
+      <Button fx:id="close" layoutX="305.0" layoutY="269.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="62.0" text="Close">
+         <font>
+            <Font size="10.0" />
+         </font>
+         <graphic>
+            <MaterialIconView glyphName="CLOSE" size="14" />
+         </graphic>
+      </Button>
+      <RadioButton fx:id="active" layoutX="113.0" layoutY="217.0" mnemonicParsing="false" text="Active" />
+      <RadioButton fx:id="inactive" layoutX="186.0" layoutY="217.0" mnemonicParsing="false" text="Inactive" />
+      <Button fx:id="update" layoutX="178.0" layoutY="269.0" mnemonicParsing="false" text="Update">
+         <graphic>
+            <MaterialIconView glyphName="CHECK" />
+         </graphic>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
